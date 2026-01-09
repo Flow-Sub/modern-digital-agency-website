@@ -1,37 +1,41 @@
-import React, { useEffect, useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import React from 'react';
+// Removed GSAP imports since we're not using them anymore
+// import gsap from 'gsap';
+// import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-if (typeof window !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger);
-}
+
+// if (typeof window !== 'undefined') {
+//   gsap.registerPlugin(ScrollTrigger);
+// }
 
 export const NewFooter: React.FC<{ onNavigate: (page: string) => void }> = ({ onNavigate }) => {
-  const footerRef = useRef<HTMLElement>(null);
 
-  useEffect(() => {
-    if (!footerRef.current) return;
-    const ctx = gsap.context(() => {
-      gsap.from('.footer-animate', {
-        scrollTrigger: {
-          trigger: footerRef.current,
-          start: 'top bottom-=100',
-          toggleActions: 'play none none reverse'
-        },
-        y: 60,
-        opacity: 0,
-        duration: 1,
-        ease: 'power3.out',
-        stagger: 0.1
-      });
-    });
-    return () => ctx.revert();
-  }, []);
+  // const footerRef = useRef<HTMLElement>(null);
+
+ 
+  // useEffect(() => {
+  //   if (!footerRef.current) return;
+  //   const ctx = gsap.context(() => {
+  //     gsap.from('.footer-animate', {
+  //       scrollTrigger: {
+  //         trigger: footerRef.current,
+  //         start: 'top bottom-=100',
+  //         toggleActions: 'play none none reverse'
+  //       },
+  //       y: 60,
+  //       opacity: 0,
+  //       duration: 1,
+  //       ease: 'power3.out',
+  //       stagger: 0.1
+  //     });
+  //   });
+  //   return () => ctx.revert();
+  // }, []);
 
   return (
     <footer 
-      ref={footerRef} 
-      className="relative min-h-screen flex flex-col justify-end pt-32 pb-8 px-6 overflow-hidden bg-black"
+      // Removed ref since we don't need it
+      className="relative flex flex-col justify-end pt-32 pb-8 px-6 overflow-hidden bg-black"
     >
       {/* ============ ANIMATED BACKGROUND - z-[1] ============ */}
       <div className="absolute inset-0 z-[1]">
@@ -154,8 +158,8 @@ export const NewFooter: React.FC<{ onNavigate: (page: string) => void }> = ({ on
       {/* ============ CONTENT - z-[3] ============ */}
       <div className="max-w-7xl mx-auto w-full relative z-[3]">
         
-        {/* Big CTA */}
-        <div className="footer-animate text-center mb-32">
+        {/* Big CTA - Removed footer-animate class */}
+        <div className="text-center mb-32 opacity-100 translate-y-0">
           <h2 className="text-5xl md:text-7xl lg:text-8xl font-futuristic font-bold tracking-tighter mb-8">
             <span className="text-gradient">Let's Build</span>
             <br />
@@ -172,16 +176,16 @@ export const NewFooter: React.FC<{ onNavigate: (page: string) => void }> = ({ on
           </button>
         </div>
 
-        {/* Footer Grid */}
-        <div className="footer-animate grid grid-cols-2 md:grid-cols-4 gap-12 mb-20">
+        {/* Footer Grid - Removed footer-animate class */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-12 mb-20">
           
           {/* Brand */}
           <div className="col-span-2 md:col-span-1 space-y-6">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg shadow-[0_0_30px_rgba(99,102,241,0.5)] flex items-center justify-center">
+              {/* <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg shadow-[0_0_30px_rgba(99,102,241,0.5)] flex items-center justify-center">
                 <span className="font-futuristic font-bold text-white text-lg">F</span>
-              </div>
-              <span className="font-futuristic font-bold tracking-wider text-xl">FLOW</span>
+              </div> */}
+              <span className="font-futuristic font-bold tracking-wider text-xl">Cubixn</span>
             </div>
             <p className="text-zinc-400 text-sm leading-relaxed">
               AI-powered solutions for the modern enterprise. Abdullahkha7701@gmail.com
@@ -227,10 +231,10 @@ export const NewFooter: React.FC<{ onNavigate: (page: string) => void }> = ({ on
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="footer-animate flex flex-col md:flex-row items-center justify-between pt-8 border-t border-white/10">
+        {/* Bottom Bar - Removed footer-animate class */}
+        <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-white/10">
           <p className="text-[10px] font-mono text-zinc-500 tracking-wider uppercase">
-            © 2025 Flow AI Systems
+            © 2025 Cubixn AI Systems
           </p>
           <div className="flex items-center gap-2 mt-4 md:mt-0">
             <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse shadow-[0_0_10px_rgba(34,197,94,0.6)]" />

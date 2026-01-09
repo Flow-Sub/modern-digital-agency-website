@@ -1,4 +1,4 @@
-import { HTMLAttributes } from 'react';
+import { HTMLAttributes, ImgHTMLAttributes } from 'react';
 import { MotionProps as FramerMotionProps } from 'framer-motion';
 
 declare module 'framer-motion' {
@@ -12,6 +12,6 @@ declare module 'framer-motion' {
     onMouseLeave?: React.MouseEventHandler;
   }
 
-  export interface HTMLMotionProps<T extends keyof HTMLElementTagNameMap> 
-    extends HTMLAttributes<HTMLElementTagNameMap[T]>, MotionProps {}
+  // This allows motion components to accept HTML attributes
+  export interface HTMLMotionProps<T> extends React.HTMLAttributes<T>, MotionProps {}
 }

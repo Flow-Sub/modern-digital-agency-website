@@ -8,7 +8,7 @@ export const LabsPage: React.FC = () => {
       <div className="mb-24 flex flex-col md:flex-row gap-12 items-center">
         <div className="flex-1">
           <h1 className="text-6xl md:text-9xl font-futuristic font-bold text-gradient tracking-tighter mb-8 leading-[0.85]">
-            FLOW <br /> LABS.
+            Cubixn <br /> LABS.
           </h1>
           <p className="text-zinc-500 text-xl font-light max-w-xl leading-relaxed">
             Incubating the next generation of voice intelligence and autonomous bots. Experimental protocols and live neural stress tests.

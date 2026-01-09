@@ -15,14 +15,14 @@ export const Navbar: React.FC<{ onNavigate: (page: string) => void, activePage: 
           className="flex items-center gap-3 group cursor-pointer"
         >
           <div className="w-6 h-6 border-2 border-indigo-500 rounded-sm rotate-45 group-hover:bg-indigo-500 group-hover:shadow-[0_0_15px_rgba(99,102,241,0.5)] transition-all duration-300" />
-          <span className="font-futuristic font-bold tracking-[0.2em] text-sm uppercase">Flow</span>
+          <span className="font-futuristic font-bold tracking-[0.2em] text-sm uppercase">Cubixn</span>
         </div>
 
         <div className="hidden md:flex items-center gap-10 text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-500">
           {[
-            { id: 'labs', label: 'Flow Labs' },
+            { id: 'labs', label: 'Projects' },
             { id: 'docs', label: 'Solutions' },
-            { id: 'blogs', label: 'Insights' },
+            { id: 'blogs', label: 'Blogs' },
             { id: 'network', label: 'Systems' }
           ].map((item) => (
             <button

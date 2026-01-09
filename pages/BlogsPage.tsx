@@ -25,7 +25,7 @@ const blogPosts = [
     category: "Automation",
     date: "Oct 15, 2024",
     author: "Scrape Lead",
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc51?auto=format&fit=crop&q=80&w=800"
+    image: "https://scrape.do/uploads/blog/web-scraping-prevention_hu59c483a256274449d0c7f5e2760d4e16_800379_600x0_resize_q75_h2_box_3.webp"
   },
   {
     title: "Scaling Custom AI Bots for Niche Markets",
@@ -33,7 +33,7 @@ const blogPosts = [
     category: "Custom Bots",
     date: "Oct 10, 2024",
     author: "Bot Architect",
-    image: "https://images.unsplash.com/photo-1531746790731-6c2079ee3f4a?auto=format&fit=crop&q=80&w=800"
+    image: "https://appinventiv.com/wp-content/uploads/2025/09/banner-4.webp"
   }
 ];
 

@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Hyperspeed from './Hyperspeed';
+// import Hyperspeed from './Hyperspeed'; // Commented out as requested
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -53,7 +53,9 @@ export const Hero: React.FC<{ onCtaClick: () => void }> = ({ onCtaClick }) => {
 
   return (
     <section ref={sectionRef} className="relative h-screen flex flex-col items-center justify-center px-6 overflow-hidden">
-      {/* Hyperspeed Background - Specific User Configuration */}
+      
+      {/* --- PREVIOUS HYPERSPEED BACKGROUND (COMMENTED OUT) --- */}
+      {/* 
       <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.4]">
         <Hyperspeed
           effectOptions={{
@@ -94,49 +96,66 @@ export const Hero: React.FC<{ onCtaClick: () => void }> = ({ onCtaClick }) => {
             }
           }}
         />
+      </div> 
+      */}
+
+      {/* --- NEW VIDEO BACKGROUND --- */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover"
+        >
+          <source src="https://ik.imagekit.io/tslnuz0b3/277093_small.mp4" type="video/mp4" />
+        </video>
+        {/* Dark overlay for better text contrast */}
+        <div className="absolute inset-0 bg-black/50" />
       </div>
 
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-        className="relative z-10 text-center"
+        className="relative z-10 text-center w-full max-w-7xl mx-auto"
       >
-        <div className="mb-10 flex items-center justify-center gap-4">
-          <div className="w-12 h-[1px] bg-indigo-500 shadow-[0_0_10px_rgba(99,102,241,1)]" />
-          <span className="text-[10px] font-bold uppercase tracking-[0.6em] text-indigo-400">Flow Core v1.0 Stable</span>
-          <div className="w-12 h-[1px] bg-indigo-500 shadow-[0_0_10px_rgba(99,102,241,1)]" />
+        <div className="mb-6 md:mb-10 flex items-center justify-center gap-4">
+          <div className="w-8 md:w-12 h-[1px] bg-indigo-500 shadow-[0_0_10px_rgba(99,102,241,1)]" />
+          <span className="text-[8px] md:text-[10px] font-bold uppercase tracking-[0.4em] md:tracking-[0.6em] text-indigo-400">Cubixn Core v1.0 Stable</span>
+          <div className="w-8 md:w-12 h-[1px] bg-indigo-500 shadow-[0_0_10px_rgba(99,102,241,1)]" />
         </div>
 
         <h1 
           ref={titleRef}
-          className="text-7xl md:text-[140px] font-futuristic font-bold leading-[0.8] tracking-tighter mb-12 text-gradient glitch-hover uppercase"
+          className="text-4xl sm:text-6xl md:text-[110px] lg:text-[140px] font-futuristic font-bold leading-[1] md:leading-[0.8] tracking-tighter mb-8 md:mb-12 text-gradient uppercase px-4"
         >
           Custom AI-Agents <br />
           <span className="text-white">& Automation Services.</span>
         </h1>
 
         <div ref={contentRef}>
-          <p className="max-w-2xl mx-auto text-zinc-500 text-lg md:text-2xl font-light leading-relaxed mb-16 px-4">
-            Architecting high-frequency AI Voice Agents, Custom Bots, and Autonomous Systems for the next industrial phase.
+          <p className="max-w-2xl mx-auto text-zinc-300 md:text-zinc-500 text-base md:text-2xl font-light leading-relaxed mb-10 md:mb-16 px-6">
+            We design AI agents that remove manual work, accelerate execution, 
+                      and turn ideas into outcomes — across sales, support, ops, and growth.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-8 px-6">
             <button 
               onClick={onCtaClick}
-              className="px-14 py-6 bg-indigo-600 rounded-full font-bold text-xs uppercase tracking-[0.3em] shadow-[0_0_30px_rgba(99,102,241,0.4)] hover:shadow-[0_0_50_rgba(99,102,241,0.6)] transform hover:-translate-y-2 transition-all active:scale-95"
+              className="w-full sm:w-auto px-10 md:px-14 py-5 md:py-6 bg-indigo-600 rounded-full font-bold text-[10px] md:text-xs uppercase tracking-[0.3em] shadow-[0_0_30px_rgba(99,102,241,0.4)] hover:shadow-[0_0_50px_rgba(99,102,241,0.6)] transform hover:-translate-y-2 transition-all active:scale-95 text-white"
             >
               Contact Us
             </button>
-            <button className="px-14 py-6 border border-white/10 rounded-full font-bold text-xs uppercase tracking-[0.3em] hover:bg-white/5 transition-all text-zinc-400 hover:text-white">
+            <button className="w-full sm:w-auto px-10 md:px-14 py-5 md:py-6 border border-white/20 rounded-full font-bold text-[10px] md:text-xs uppercase tracking-[0.3em] hover:bg-white/5 transition-all text-zinc-300 hover:text-white">
               System Specs
             </button>
           </div>
         </div>
       </motion.div>
 
-      {/* Kinetic Typography Footnote */}
-      <div className="absolute bottom-20 w-full overflow-hidden whitespace-nowrap opacity-10 font-mono text-[10px] tracking-[1em] text-zinc-500">
+      {/* Kinetic Typography Footnote - Hidden on very small screens for better UX */}
+      <div className="absolute bottom-10 md:bottom-20 w-full overflow-hidden whitespace-nowrap opacity-20 font-mono text-[8px] md:text-[10px] tracking-[0.8em] md:tracking-[1em] text-zinc-500">
         <motion.div 
           animate={{ x: [0, -1000] }}
           transition={{ duration: 25, repeat: Infinity, ease: "linear" }}

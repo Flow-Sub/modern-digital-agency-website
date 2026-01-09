@@ -5,7 +5,6 @@ import { Hero } from './components/Hero';
 import { ServicesGrid } from './components/ServicesGrid';
 import { TechStack } from './components/TechStack';
 import { CaseStudies } from './components/CaseStudies';
-import { Pricing } from './components/Pricing';
 import { FAQ } from './components/FAQ';
 import { NetworkStats } from './components/NetworkStats';
 import { Process } from './components/Process';
@@ -48,38 +47,13 @@ const App: React.FC = () => {
         <>
           <Hero onCtaClick={() => setActivePage('contact')} />
           <div className="relative z-10 space-y-48 py-32">
-            <section id="services">
-              <ServicesGrid />
-            </section>
-
-            <section id="process">
-              <Process />
-            </section>
-            
-            <section id="case-studies">
-              <CaseStudies />
-            </section>
-
-            <section id="tech">
-              <TechStack />
-            </section>
-
-            <section id="network-stats">
-              <NetworkStats />
-            </section>
-
-            <section id="testimonials">
-              <Testimonials />
-            </section>
-
-            <section id="pricing">
-              <Pricing />
-            </section>
-
-            <section id="faq">
-              <FAQ />
-            </section>
-
+            <section id="services"><ServicesGrid /></section>
+            <section id="process"><Process /></section>
+            <section id="case-studies"><CaseStudies /></section>
+            <section id="tech"><TechStack /></section>
+            <section id="network-stats"><NetworkStats /></section>
+            <section id="testimonials"><Testimonials /></section>
+            <section id="faq"><FAQ /></section>
             <section id="cta" className="max-w-7xl mx-auto px-6">
               <motion.div 
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -111,7 +85,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="relative min-h-screen overflow-x-hidden">
+    <div className="relative min-h-screen flex flex-col bg-black overflow-x-hidden">
       <BackgroundGlows />
       <Navbar onNavigate={setActivePage} activePage={activePage} />
       
@@ -122,16 +96,16 @@ const App: React.FC = () => {
           animate={{ opacity: 1, filter: 'blur(0px)' }}
           exit={{ opacity: 0, filter: 'blur(10px)' }}
           transition={{ duration: 0.5 }}
+          className="flex-grow flex flex-col relative z-10"
         >
-          <main>
+          <main className="flex-grow">
             {renderPage()}
           </main>
           <NewFooter onNavigate={setActivePage} />
         </motion.div>
       </AnimatePresence>
 
-      {/* CHANGED: Removed z-50, now z-10 and lower opacity */}
-      <div className="fixed top-0 left-0 w-full h-full pointer-events-none z-10 mix-blend-overlay opacity-5 cyber-grid" />
+      <div className="fixed top-0 left-0 w-full h-full pointer-events-none z-20 mix-blend-overlay opacity-5 cyber-grid" />
     </div>
   );
 };

@@ -80,7 +80,7 @@ export const NeuralFooter: React.FC<{ onNavigate: (page: string) => void }> = ({
           <div className="space-y-6">
             <h4 className="text-[10px] font-bold uppercase tracking-[0.4em] text-indigo-500">Infrastructure</h4>
             <ul className="text-zinc-500 text-sm space-y-4 font-medium">
-              <li onClick={() => onNavigate('labs')} className="hover:text-white transition-colors cursor-pointer">Flow Labs</li>
+              <li onClick={() => onNavigate('labs')} className="hover:text-white transition-colors cursor-pointer">Cubixn Labs</li>
               <li onClick={() => onNavigate('docs')} className="hover:text-white transition-colors cursor-pointer">Solutions</li>
               <li onClick={() => onNavigate('blogs')} className="hover:text-white transition-colors cursor-pointer">Insights</li>
               <li onClick={() => onNavigate('contact')} className="hover:text-white transition-colors cursor-pointer">Initialize Sync</li>
@@ -100,7 +100,7 @@ export const NeuralFooter: React.FC<{ onNavigate: (page: string) => void }> = ({
 
         <div className="flex flex-col md:flex-row items-center justify-between pt-16 border-t border-white/5 text-[9px] font-mono text-zinc-700 tracking-[0.4em] uppercase">
           <div className="flex gap-12">
-            <p>© FLOW AI SYSTEMS // 2025</p>
+            <p>© Cubixn AI SYSTEMS // 2025</p>
             <p className="hidden md:block">ISO-27001 COMPLIANT</p>
           </div>
           <div className="flex gap-12 mt-8 md:mt-0">
